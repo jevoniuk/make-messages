@@ -5,11 +5,16 @@ const converter = new showdown.Converter();
 
 function main() {
     if (process.argv.length != 3) {
-        console.log("USAGE: node make-messages.js <markdown file>");
+        console.log('USAGE: node make-messages.js <markdown file>');
         return;
     }
 
     const filename = process.argv[2];
+
+    if (filename.substring(filename.indexOf('.')) != '.md') {
+        console.log('Must supply a markdown file');
+        return;
+    }
 
     const markdown = fs.readFileSync(filename, "utf8");
     const html     = converter.makeHtml(markdown);
