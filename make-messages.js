@@ -13,7 +13,7 @@ function main() {
 
     const markdown = fs.readFileSync(filename, "utf8");
     const html     = converter.makeHtml(markdown);
-    let   minified   = minify(html, {
+    let   minified = minify(html, {
         collapseWhitespace: true,
         quoteCharacter: "'",
         removeComments: true,
