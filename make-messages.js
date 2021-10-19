@@ -23,7 +23,7 @@ function main() {
     minified = minified.replace('"', "'");          // replace double quotes with single
 
     filenameNoExtension = filename.substring(0, filename.indexOf('.'));
-    fs.writeFileSync(filenameNoExtension + '_html.html', html);
+    fs.writeFileSync(filenameNoExtension + '_html.html',     html);
     fs.writeFileSync(filenameNoExtension + '_minified.html', minified);
 }
 
