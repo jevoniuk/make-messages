@@ -1,7 +1,11 @@
 const fs        = require('fs');
 const showdown  = require('showdown');
 const minify    = require('html-minifier').minify;
-const converter = new showdown.Converter();
+const converter = new showdown.Converter({
+    tasklists: true,
+    simplifiedAutoLinks: true,
+    literalMidWordUnderscores: true
+});
 
 function main() {
     if (process.argv.length != 3) {
