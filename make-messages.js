@@ -14,6 +14,10 @@ function main() {
     }
 
     const filename = process.argv[2];
+    if (!fs.existsSync(filename)) {
+        console.log(filename + " doesn't seem to exist. Try checking the path and current directory.");
+        return;
+    }
 
     if (filename.substring(filename.indexOf('.')) != '.md') {
         console.log('Must supply a markdown file');
