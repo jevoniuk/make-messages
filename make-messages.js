@@ -4,7 +4,8 @@ const minify    = require('html-minifier').minify;
 const converter = new showdown.Converter({
     tasklists: true,
     simplifiedAutoLinks: true,
-    literalMidWordUnderscores: true
+    literalMidWordUnderscores: true,
+    tables: true,
 });
 
 function main() {
@@ -36,8 +37,8 @@ function main() {
     minified = minified.replace('"', "'");          // replace double quotes with single
 
     filenameNoExtension = filename.substring(0, filename.indexOf('.'));
-    fs.writeFileSync(filenameNoExtension + '_html.html',     html);
-    fs.writeFileSync(filenameNoExtension + '_minified.html', minified);
+    fs.writeFileSync(filenameNoExtension + '.html',      html);
+    fs.writeFileSync(filenameNoExtension + '_mini.html', minified);
 }
 
 main();
