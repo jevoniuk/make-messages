@@ -6,6 +6,7 @@ const converter = new showdown.Converter({
     simplifiedAutoLinks: true,
     literalMidWordUnderscores: true,
     tables: true,
+    strikethrough: true,
 });
 
 function main() {
